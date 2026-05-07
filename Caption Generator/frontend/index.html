@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Image Caption Generator</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
+</head>
+<body>
+  <div class="app-root">
+    <div class="grid-bg"></div>
+    <div class="glow-orb orb1"></div>
+    <div class="glow-orb orb2"></div>
+
+    <div class="container">
+      <div class="badge"><span class="badge-dot"></span> Project 6 &mdash; Deep Learning</div>
+
+      <h1>AI <span class="accent">Image</span><br>Caption <span class="accent2">Generator</span></h1>
+      <p class="tagline">// CNN + RNN &middot; Natural Language Processing &middot; Computer Vision</p>
+
+      <!-- Upload Zone -->
+      <div class="upload-zone" id="uploadZone">
+        <input type="file" id="fileInput" accept="image/*" />
+        <div class="upload-icon"><i class="ti ti-photo-up"></i></div>
+        <div class="upload-title">Drop an image here</div>
+        <div class="upload-sub">PNG, JPG, WEBP &mdash; up to 10MB</div>
+      </div>
+
+      <!-- Image Preview -->
+      <div class="preview-section" id="previewSection">
+        <img id="previewImg" src="" alt="uploaded image" />
+        <div class="preview-overlay" id="previewMeta">image loaded</div>
+        <button class="change-btn" id="changeBtn"><i class="ti ti-refresh"></i> Change Image</button>
+      </div>
+
+      <!-- Style Options -->
+      <div class="options-row">
+        <div class="option-chip active" data-style="descriptive"><i class="ti ti-align-left"></i> Descriptive</div>
+        <div class="option-chip" data-style="poetic"><i class="ti ti-sparkles"></i> Poetic</div>
+        <div class="option-chip" data-style="technical"><i class="ti ti-code"></i> Technical</div>
+        <div class="option-chip" data-style="social"><i class="ti ti-social"></i> Social</div>
+      </div>
+
+      <!-- Generate Button -->
+      <button class="btn-generate" id="generateBtn">
+        <i class="ti ti-bolt"></i> Generate Caption
+      </button>
+
+      <!-- Loading -->
+      <div class="loading-bar" id="loadingBar">
+        <div class="loading-fill" id="loadingFill"></div>
+      </div>
+      <div class="status-text" id="statusText">Encoding image features via CNN...</div>
+
+      <!-- Results -->
+      <div class="result-section" id="resultSection">
+        <div class="result-label">Generated Caption</div>
+        <div class="caption-card" id="card1">
+          <div class="caption-type" id="type1">Descriptive</div>
+          <div class="caption-text" id="caption1"></div>
+          <div class="tags-row" id="tags1"></div>
+          <button class="copy-btn" id="copyBtn1" title="Copy caption"><i class="ti ti-copy"></i></button>
+        </div>
+      </div>
+
+      <!-- Architecture -->
+      <div class="arch-section">
+        <div class="arch-title">Architecture Pipeline</div>
+        <div class="arch-flow">
+          <div class="arch-node"><i class="ti ti-photo"></i><br>Image Input<span>Raw pixels</span></div>
+          <div class="arch-arrow"><i class="ti ti-arrow-right"></i></div>
+          <div class="arch-node"><i class="ti ti-cpu"></i><br>CNN Encoder<span>Feature maps</span></div>
+          <div class="arch-arrow"><i class="ti ti-arrow-right"></i></div>
+          <div class="arch-node"><i class="ti ti-arrows-left-right"></i><br>RNN Decoder<span>Seq generation</span></div>
+          <div class="arch-arrow"><i class="ti ti-arrow-right"></i></div>
+          <div class="arch-node"><i class="ti ti-message-2"></i><br>Caption<span>Natural lang.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+{"timestep": 200000, "update": 30996, "mean_reward": 16.73, "policy_loss": -0.000699999975040555, "value_loss": 15.6875, "entropy": 1.8372999429702759, "approx_kl": 0.003100000089034438, "fps": 209, "elapsed_s": 953.2}
